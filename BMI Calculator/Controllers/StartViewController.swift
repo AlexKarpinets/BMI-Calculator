@@ -61,8 +61,8 @@ class StartViewController: UIViewController {
     }
     
     private func getBmi() -> String {
-        guard let height = Double(heightTextField.text!) else { return "" }
-        guard let weight = Double(weightTextField.text!) else { return "" }
+        guard let height = Double(heightTextField.text ?? "") else { return "" }
+        guard let weight = Double(weightTextField.text ?? "") else { return "" }
         
         if segmentControl.selectedSegmentIndex == 0 {
             bmi = weight / pow(height, 2) * 10000
@@ -73,8 +73,8 @@ class StartViewController: UIViewController {
     }
     
     private func getImage() -> UIImage? {
-        guard let height = Double(heightTextField.text!) else { return UIImage(named: "normal") }
-        guard let weight = Double(weightTextField.text!) else { return UIImage(named: "normal") }
+        guard let height = Double(heightTextField.text ?? "") else { return UIImage(named: "normal") }
+        guard let weight = Double(weightTextField.text ?? "") else { return UIImage(named: "normal") }
         
         if segmentControl.selectedSegmentIndex == 0 {
             bmi = weight / pow(height, 2) * 10000
