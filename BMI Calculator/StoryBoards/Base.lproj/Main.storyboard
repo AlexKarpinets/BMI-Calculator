@@ -111,6 +111,7 @@
                     <connections>
                         <segue destination="aff-iM-9Kh" kind="relationship" relationship="viewControllers" id="Yaw-YH-TBb"/>
                         <segue destination="yC2-L0-vnJ" kind="relationship" relationship="viewControllers" id="pPc-dd-puX"/>
+                        <segue destination="FcP-gm-cAs" kind="relationship" relationship="viewControllers" id="WMK-8U-f47"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6DV-DS-sKC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -333,9 +334,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="j3E-rp-aqg">
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="mzv-Ph-CoO">
+                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="mzv-Ph-CoO">
                             <connections>
                                 <action selector="shareButton:" destination="wqr-fc-Xme" id="DLI-6y-p6z"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="txI-LS-qlw">
+                            <connections>
+                                <segue destination="Jq6-WK-XcU" kind="show" id="ofO-5M-FVj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -351,11 +357,64 @@
             </objects>
             <point key="canvasLocation" x="3302" y="99"/>
         </scene>
+        <!--Results-->
+        <scene sceneID="SWn-Z6-MkN">
+            <objects>
+                <tableViewController id="Jq6-WK-XcU" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="mX1-rV-UOp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="JTt-CJ-ymN">
+                                <rect key="frame" x="0.0" y="50" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JTt-CJ-ymN" id="6YJ-WR-2SF">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Jq6-WK-XcU" id="g15-rz-2eH"/>
+                            <outlet property="delegate" destination="Jq6-WK-XcU" id="FX3-c2-bJZ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Results" id="lsE-Xy-U01"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WWf-Zq-lZG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5076.811594202899" y="-304.01785714285711"/>
+        </scene>
+        <!--Results-->
+        <scene sceneID="ibX-Zm-P2g">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FcP-gm-cAs" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Results" image="book.fill" catalog="system" id="flh-YP-gkn"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Results" id="3M4-tj-khA"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BhQ-Ha-NpE">
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Jq6-WK-XcU" kind="relationship" relationship="rootViewController" id="JPf-7h-oIc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ngD-oC-Twx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4039" y="-623"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ofO-5M-FVj"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="background" width="2999.5" height="2999.5"/>
         <image name="bmiFooter" width="2250" height="538.5"/>
         <image name="bmiHead" width="3000" height="3000"/>
+        <image name="book.fill" catalog="system" width="128" height="95"/>
         <image name="heart.circle.fill" catalog="system" width="128" height="123"/>
         <image name="info" catalog="system" width="93" height="128"/>
         <image name="underweight" width="1287" height="2549.5"/>
